@@ -1,0 +1,15 @@
+The code contained includes a test harness as well as the oauth libraries for oauth login dance and Linkein API requests.  Oauth login is handled with an embedded webBrowser which is shown modally for the user to login.  Upon login completion, dialog will be closed and the token and verifier will be available from the dialogs property.
+
+To use the code, simply Add your Linkedin consumer secret and Consumer key to the OauthLinkedIn.cs file:
+view source
+print?
+1	private string _consumerKey = "ENTER_YOUR_CONSUMER_KEY";
+2	private string _consumerSecret = "ENTER_YOUR_CONSUMER_SCRET";
+
+Then you can make api calls following a few steps:
+
+1	OAuthLinkedIn _oauth = new OAuthLinkedIn();
+2	String requestToken = _oauth.getRequestToken();
+3	_oauth.authorizeToken();
+4	String accessToken = _oauth.getAccessToken();</div>
+
